@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  rabbitmq:
+    image: rabbitmq:3.10.5-management
+    container_name: rabbitmq
+    ports:
+      - '15672:15672'
+      - '5672:5672'
+    networks:
+      - rabbitnetwork
+networks:
+  rabbitnetwork:
+    name: "rabbitnetwork"
+    driver: bridge
