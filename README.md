@@ -1,4 +1,1 @@
-# springboot-microservices-rabbitmq
-Microservices introduction with RabbitMQ
-
-* Event-Driven Microservices using Spring boot and RabbitMQ
+Este repositorio implementa una **arquitectura de microservicios orientada a eventos** utilizando Spring Boot 3 y RabbitMQ como broker de mensajes. El sistema consta de tres microservicios independientes: un **servicio de órdenes** (order-service) que expone una API REST en el puerto 8080 para recibir pedidos y publica eventos a RabbitMQ usando un TopicExchange, un **servicio de inventario** (stock-service) en el puerto 8081 que consume estos eventos para procesar actualizaciones de stock, y un **servicio de emails** (email-service) en el puerto 8082 que envía notificaciones de confirmación a los clientes. La comunicación asíncrona a través de RabbitMQ permite que los servicios estén desacoplados, facilitando la escalabilidad independiente de cada componente y demostrando patrones modernos de arquitectura de microservicios con mensajería basada en colas y routing keys para distribuir mensajes de manera flexible entre diferentes consumidores.
